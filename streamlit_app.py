@@ -25,7 +25,7 @@ streamlit.dataframe(fruits_to_show)
 
 ## fetch fruityvice API data and display into DOM
 streamlit.header("Fruityvice Fruit Advice!")
-fruit_choice = streamlit.text_input('wWhat fruit would you like information about?', 'Kiwi')
+fruit_choice = streamlit.text_input('what fruit would you like information about?', 'Kiwi')
 streamlit.write('The user entered', fruit_choice)
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
@@ -41,3 +41,6 @@ my_cur.execute("select * from fruit_load_list")
 my_data_row = my_cur.fetchone()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_row)
+
+fruit_to_add =  streamlit.text('What fruit would you like to add?', 'jackfruit')
+streamlit.text_input(fruit_to_add)
